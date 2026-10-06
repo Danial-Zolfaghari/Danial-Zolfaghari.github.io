@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Monitoring Platform — Danial Zolfaghari</title>
+  <meta name="description" content="A cross-platform monitoring architecture that turns host and service telemetry into operational dashboards, alerts and troubleshooting context.">
+  <meta name="author" content="Danial Zolfaghari">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#07090d">
+  <link rel="canonical" href="https://danial-zolfaghari.github.io/case-studies/monitoring-platform.html">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <header class="site-nav scrolled">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">DZ</span>
+        <span class="brand-copy"><strong>Danial Zolfaghari</strong><small>Engineering Case Study</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/">Portfolio</a>
+        <a href="/#work">Selected Work</a>
+        <a href="/#stack">Stack</a>
+      </nav>
+      <div class="nav-actions"><a class="nav-ghost" href="https://github.com/Danial-Zolfaghari">GitHub ↗</a></div>
+    </div>
+  </header>
+  <main class="case-main">
+    <article class="container case-article">
+      <a class="case-back" href="/#work">← Back to selected work</a>
+      <div class="case-hero">
+        <span class="section-index">CASE STUDY / OBSERVABILITY</span>
+        <h1>Monitoring Platform</h1>
+        <p>A cross-platform monitoring architecture that turns host and service telemetry into operational dashboards, alerts and troubleshooting context.</p>
+        <div class="case-note">Sanitized architecture write-up — private infrastructure, customer data, credentials and deployment-specific identifiers are intentionally omitted.</div>
+      </div>
+      <section class="case-section">
+  <h2>The problem</h2>
+  <p>Collect useful system and service telemetry across heterogeneous hosts without making the monitoring layer expensive, noisy or ambiguous when data goes stale.</p>
+</section>
+<section class="case-section">
+  <h2>Architecture</h2>
+  <div class="pipeline"><span>Hosts / services</span><b>→</b><span>Python / PowerShell / Bash agents</span><b>→</b><span>Normalized telemetry</span><b>→</b><span>Central data layer</span><b>→</b><span>Grafana / Kibana</span><b>→</b><span>Alerts & operator workflows</span></div>
+</section>
+<section class="case-grid">
+  <div class="case-card"><h3>Cross-platform collection</h3><p>Windows and Linux implementations can differ while still emitting a common operational contract.</p></div>
+  <div class="case-card"><h3>Bounded overhead</h3><p>Collection intervals, retries, process usage and payload size are treated as production constraints rather than afterthoughts.</p></div>
+  <div class="case-card"><h3>Signal over volume</h3><p>The goal is not to collect everything. Metrics are selected for troubleshooting, alerting and health/capacity decisions.</p></div>
+  <div class="case-card"><h3>Failure visibility</h3><p>Missing or stale telemetry must be distinguishable from a legitimate zero value or a healthy quiet system.</p></div>
+</section>
+<section class="case-section">
+  <h2>Representative stack</h2>
+  <div class="stack-list case-tags"><span>Python</span><span>PowerShell</span><span>Bash</span><span>PostgreSQL</span><span>Elasticsearch</span><span>Grafana</span><span>Kibana</span></div>
+</section>
+    </article>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span><strong>Danial Zolfaghari</strong> · IRT / EOC · Network Security · Backend Engineering</span><span>Engineering case study</span></div></footer>
+</body>
+</html>
