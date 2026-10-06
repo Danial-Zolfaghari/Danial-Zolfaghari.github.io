@@ -1,71 +1,355 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Danial Zolfaghari — IRT / EOC, Network Security & Backend Engineering</title>
-<meta name="description" content="Danial Zolfaghari — IRT / EOC Engineer, Network Security Engineer and Backend Developer working across incident response, network traffic analysis, Elasticsearch, Python, databases, automation and applied AI.">
-<meta name="author" content="Danial Zolfaghari">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://danial-zolfaghari.github.io/">
-<meta property="og:type" content="profile">
-<meta property="og:title" content="Danial Zolfaghari — IRT / EOC, Network Security & Backend Engineering">
-<meta property="og:description" content="Incident response, network traffic analysis, backend systems, automation, observability and applied AI.">
-<meta property="og:url" content="https://danial-zolfaghari.github.io/">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Danial Zolfaghari","alternateName":"Danial-Zolfaghari","url":"https://danial-zolfaghari.github.io/","email":"mailto:Contact_VoidCipher@proton.me","jobTitle":["IRT / EOC Engineer","Network Security Engineer","Backend Developer"],"knowsAbout":["Incident Response","EOC","SOC","NOC","Network Security","Network Traffic Analysis","DDoS","Python","JavaScript","Lua","SQL","FastAPI","Flask","Node.js","PostgreSQL","MySQL","MongoDB","SQLite","Elasticsearch","Kibana","Grafana","Linux","Windows","Local LLMs","RAG","Ollama","Qwen","DeepSeek"],"sameAs":["https://github.com/Danial-Zolfaghari"]}
-</script>
-<style>
-:root{--bg:#070b12;--panel:#0d1420;--line:#203047;--text:#eef4fb;--muted:#91a2b8;--accent:#67e8a5;--blue:#70a5ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(circle at 82% 0,#11243a 0,transparent 34%),var(--bg);color:var(--text);line-height:1.65}
-a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}.brand{font-weight:800}.navlinks{display:flex;gap:20px;color:var(--muted)}.hero{padding:90px 0 65px}.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem}.hero h1{font-size:clamp(3rem,8vw,6.5rem);line-height:.95;margin:14px 0 24px;max-width:950px}.hero h1 span{color:var(--blue)}.lede{font-size:clamp(1.08rem,2vw,1.32rem);max-width:800px;color:var(--muted)}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{padding:12px 18px;border:1px solid var(--line);border-radius:12px;background:#111a28}.btn.primary{background:var(--accent);color:#06130d;border-color:var(--accent);font-weight:800}
-section{padding:58px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:26px}.section-head h2{font-size:2rem;margin:0}.section-head p{color:var(--muted);max-width:620px;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{border:1px solid var(--line);background:linear-gradient(180deg,#0f1825,#0b111b);border-radius:18px;padding:24px}.card h3{margin:0 0 10px}.card p,.card li{color:var(--muted)}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.tag{font-size:.78rem;padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:#b9c6d6}.wide{grid-column:1/-1}.timeline{display:grid;gap:14px}.row{border-left:2px solid var(--accent);padding-left:16px}.row strong{display:block}.row span{color:var(--muted)}footer{border-top:1px solid var(--line);padding:35px 0 55px;color:var(--muted)}@media(max-width:760px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}.navlinks{display:none}.hero{padding-top:55px}.section-head{display:block}.section-head p{margin-top:10px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Danial Zolfaghari — Network Security, IRT / EOC & Backend Engineering</title>
+  <meta name="description" content="Danial Zolfaghari — IRT / EOC Engineer, Network Security Engineer and Backend Developer focused on traffic analysis, DDoS operations, observability, backend systems, automation and applied AI.">
+  <meta name="author" content="Danial Zolfaghari">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#07090d">
+  <link rel="canonical" href="https://danial-zolfaghari.github.io/">
+  <link rel="stylesheet" href="/styles.css">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Danial Zolfaghari — Security Operations & Backend Engineering">
+  <meta property="og:description" content="IRT / EOC, network security, traffic analysis, backend systems, observability, automation and applied AI.">
+  <meta property="og:url" content="https://danial-zolfaghari.github.io/">
+  <meta property="og:site_name" content="Danial Zolfaghari">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Danial Zolfaghari">
+  <meta name="twitter:description" content="IRT / EOC Engineer · Network Security Engineer · Backend Developer">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Danial Zolfaghari",
+    "alternateName":"Danial-Zolfaghari",
+    "url":"https://danial-zolfaghari.github.io/",
+    "email":"mailto:Contact_VoidCipher@proton.me",
+    "jobTitle":["IRT / EOC Engineer","Network Security Engineer","Backend Developer"],
+    "knowsAbout":[
+      "Incident Response","EOC","SOC","NOC","Network Security","Network Traffic Analysis",
+      "DDoS","Python","JavaScript","Lua","SQL","FastAPI","Flask","Node.js",
+      "PostgreSQL","MySQL","MongoDB","SQLite","Elasticsearch","Kibana","Grafana",
+      "Linux","Windows","Local LLMs","RAG","Ollama","Qwen","DeepSeek"
+    ],
+    "sameAs":["https://github.com/Danial-Zolfaghari"]
+  }
+  </script>
 </head>
 <body>
-<div class="wrap">
-<nav class="nav"><a class="brand" href="#">DZ / Danial Zolfaghari</a><div class="navlinks"><a href="#focus">Focus</a><a href="#stack">Stack</a><a href="#ai">AI</a><a href="https://github.com/Danial-Zolfaghari">GitHub</a></div></nav>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
-<main>
-<section class="hero">
-<div class="eyebrow">Security Operations · Backend Engineering · Applied AI</div>
-<h1>Danial <span>Zolfaghari</span></h1>
-<p class="lede">IRT / EOC Engineer, Network Security Engineer and Backend Developer working across incident response, network traffic analysis, DDoS operations, observability, backend systems, automation, databases and local AI.</p>
-<div class="buttons"><a class="btn primary" href="https://github.com/Danial-Zolfaghari">GitHub Profile</a><a class="btn" href="mailto:Contact_VoidCipher@proton.me">Contact</a></div>
-</section>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Danial Zolfaghari home">
+        <span class="brand-mark">DZ</span>
+        <span class="brand-copy">
+          <strong>Danial Zolfaghari</strong>
+          <small>Security · Backend · AI</small>
+        </span>
+      </a>
 
-<section id="focus">
-<div class="section-head"><h2>What I actually work on</h2><p>A profile built around real operational and engineering work — not a list of repository technologies.</p></div>
-<div class="grid">
-<article class="card"><h3>Security & Operations</h3><ul><li>IRT / Incident Response</li><li>EOC / SOC / NOC workflows</li><li>Network Security</li><li>L3/L4 traffic analysis</li><li>DDoS detection & mitigation</li><li>Firewall operations</li><li>Monitoring and troubleshooting</li></ul></article>
-<article class="card"><h3>Backend & Automation</h3><ul><li>Python backend development</li><li>REST APIs</li><li>FastAPI / Flask / Node.js</li><li>Automation with Bash and PowerShell</li><li>Internal tools and data pipelines</li><li>Frontend work with JavaScript / React / HTML / CSS when needed</li></ul></article>
-</div>
-</section>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#focus">Focus</a>
+        <a href="#work">Selected Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#foundation">Foundation</a>
+      </nav>
 
-<section id="stack">
-<div class="section-head"><h2>Technical Stack</h2><p>Technologies I have actually worked with across professional, personal and long-running engineering work.</p></div>
-<div class="grid">
-<article class="card"><h3>Languages</h3><div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Lua</span><span class="tag">SQL</span><span class="tag">Bash</span><span class="tag">PowerShell</span><span class="tag">C — basic</span></div></article>
-<article class="card"><h3>Databases & Search</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB / NoSQL</span><span class="tag">SQLite</span><span class="tag">Elasticsearch</span><span class="tag">KQL</span><span class="tag">Query DSL</span></div></article>
-<article class="card"><h3>Network & Observability</h3><div class="tags"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">TCP / UDP / ICMP</span><span class="tag">Wireshark</span><span class="tag">Nmap</span><span class="tag">TShark</span><span class="tag">Kibana</span><span class="tag">Grafana</span><span class="tag">ELK</span></div></article>
-<article class="card"><h3>Systems & Tooling</h3><div class="tags"><span class="tag">Linux</span><span class="tag">Ubuntu</span><span class="tag">Kali Linux</span><span class="tag">Windows</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Docker</span></div></article>
-</div>
-</section>
+      <div class="nav-actions">
+        <a class="nav-ghost" href="https://github.com/Danial-Zolfaghari" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="nav-cta" href="#contact">Start a conversation</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
 
-<section id="ai">
-<div class="section-head"><h2>Applied AI</h2><p>Recent work focuses on making LLM-based data systems grounded, deterministic and useful for non-technical operators.</p></div>
-<div class="grid">
-<article class="card wide"><h3>Local AI / LLM Data Systems</h3><p>I have worked with local LLM pipelines using Ollama, Qwen, DeepSeek, embedding models, reranking and RAG-style retrieval. A major focus has been schema-aware natural language analysis over Elasticsearch, ambiguity handling, deterministic query generation, evidence chains, planner/tool pipelines and persistent knowledge layers such as a World Map.</p><div class="tags"><span class="tag">Ollama</span><span class="tag">Qwen</span><span class="tag">DeepSeek</span><span class="tag">Embeddings</span><span class="tag">Reranking</span><span class="tag">RAG</span><span class="tag">Elasticsearch</span><span class="tag">Evidence-driven AI</span></div></article>
-</div>
-</section>
+  <div class="mobile-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-head">
+      <a class="brand" href="#top">
+        <span class="brand-mark">DZ</span>
+        <span class="brand-copy"><strong>Danial Zolfaghari</strong><small>Portfolio / 2026</small></span>
+      </a>
+      <button class="mobile-close" type="button" aria-label="Close menu">×</button>
+    </div>
+    <nav class="mobile-links">
+      <a href="#focus">Focus</a>
+      <a href="#work">Selected Work</a>
+      <a href="#stack">Technical Stack</a>
+      <a href="#foundation">Engineering Foundation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="mobile-contact" href="mailto:Contact_VoidCipher@proton.me">Start a conversation ↗</a>
+  </aside>
 
-<section>
-<div class="section-head"><h2>FiveM / Lua background</h2><p>A long-running part of my development background that helped build practical full-system debugging skills.</p></div>
-<div class="card"><p>I spent years working with FiveM servers and tooling: Lua scripting, JavaScript, HTML/CSS interfaces, MySQL/oxmysql, administration systems, permissions/authentication, logging, economy/gameplay systems and performance optimization across large resource sets.</p></div>
-</section>
-</main>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-kicker-row">
+          <span class="kicker">Production systems · Security operations · Backend engineering</span>
+          <span class="status"><i></i> Engineering for real operational environments</span>
+        </div>
 
-<footer><strong>Danial Zolfaghari</strong> · IRT / EOC Engineer · Network Security Engineer · Backend Developer</footer>
-</div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="eyebrow">IRT / EOC · Network Security · Backend</div>
+            <h1>Engineering systems that <span>survive reality.</span></h1>
+            <p class="hero-intro">
+              I'm <strong>Danial Zolfaghari</strong>. I work where security operations and software engineering meet:
+              incident response, L3/L4 traffic analysis, DDoS workflows, observability, backend systems, automation,
+              and evidence-driven AI over operational data.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#work">Explore selected work →</a>
+              <a class="btn btn-secondary" href="https://github.com/Danial-Zolfaghari" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+            </div>
+            <div class="hero-meta">
+              <span>Python · JavaScript · Lua · SQL</span>
+              <span>Elasticsearch · PostgreSQL · MySQL · MongoDB</span>
+              <a href="mailto:Contact_VoidCipher@proton.me">Contact_VoidCipher@proton.me</a>
+            </div>
+          </div>
+
+          <aside class="profile-card" aria-label="Engineering profile">
+            <span class="card-label">Engineering profile</span>
+            <h2>Security operations with a builder's mindset.</h2>
+            <div class="profile-role">IRT / EOC Engineer · Network Security Engineer · Backend Developer</div>
+            <div class="profile-lines">
+              <div class="profile-line"><span>Primary</span><span>Incident Response / EOC / Network Security</span></div>
+              <div class="profile-line"><span>Engineering</span><span>Backend systems / automation / internal tooling</span></div>
+              <div class="profile-line"><span>Data</span><span>Elasticsearch / SQL / observability pipelines</span></div>
+              <div class="profile-line"><span>AI</span><span>Local LLMs / RAG / evidence-driven analysis</span></div>
+              <div class="profile-line"><span>Systems</span><span>Linux / Windows / network operations</span></div>
+            </div>
+            <p class="profile-note">
+              I prefer systems that are observable, deterministic where possible, explicit about failure,
+              and useful to the operator who has to trust them under pressure.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-index">01 / FOCUS</span>
+            <h2>Four disciplines.<br>One operational mindset.</h2>
+          </div>
+          <p>
+            My work spans security operations and engineering rather than living inside a single job-title box.
+            The common thread is production: understand the signal, build the system, verify the outcome.
+          </p>
+        </div>
+
+        <div class="focus-grid">
+          <article class="focus-card">
+            <span class="num">01</span>
+            <h3>Security Operations</h3>
+            <p>IRT, EOC, SOC/NOC workflows, incident handling, monitoring, firewall operations and production troubleshooting.</p>
+            <span class="mini">Operations</span>
+          </article>
+          <article class="focus-card">
+            <span class="num">02</span>
+            <h3>Network Analysis</h3>
+            <p>L3/L4 traffic analysis, TCP/UDP/ICMP behavior, DNS, DDoS detection and mitigation workflows, packet and flow analysis.</p>
+            <span class="mini">Network</span>
+          </article>
+          <article class="focus-card">
+            <span class="num">03</span>
+            <h3>Backend Engineering</h3>
+            <p>Python services, APIs, automation, data pipelines, integration tooling, Linux/Windows scripting and operational backends.</p>
+            <span class="mini">Engineering</span>
+          </article>
+          <article class="focus-card">
+            <span class="num">04</span>
+            <h3>Applied AI</h3>
+            <p>Local LLM pipelines, retrieval, embeddings, reranking, ambiguity handling, deterministic queries and evidence chains.</p>
+            <span class="mini">AI / Data</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-index">02 / SELECTED WORK</span>
+            <h2>Systems built around<br>real operational problems.</h2>
+          </div>
+          <p>
+            A small selection by impact and engineering depth — not a dump of every repository or every tool I've ever touched.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card large">
+            <div class="work-top"><span>AI Data Analyzer</span><span>Data / AI</span></div>
+            <h3>Natural-language investigations without giving the model permission to invent.</h3>
+            <p>
+              A schema-aware analysis pipeline over large Elasticsearch datasets: ambiguity detection, retrieval,
+              a persistent semantic World Map, deterministic query planning, safe execution, evidence collection,
+              and grounded answers designed for non-technical operators.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">Elasticsearch</span><span class="tag">Local LLMs</span>
+              <span class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">Reranking</span>
+            </div>
+            <span class="work-link">Evidence-first AI / production data</span>
+          </article>
+
+          <article class="work-card">
+            <div class="work-top"><span>VIDA</span><span>Observability</span></div>
+            <h3>Unified monitoring for operators.</h3>
+            <p>
+              Monitoring and operational tooling across multi-OS agents, dashboards, alerts, service visibility and automation —
+              designed to turn raw telemetry into something usable during real incidents.
+            </p>
+            <div class="tag-row"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Grafana</span><span class="tag">Kibana</span></div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-top"><span>ANDE</span><span>Network Security</span></div>
+            <h3>L3/L4 traffic analysis with operator ground truth.</h3>
+            <p>
+              A network-analysis system centered on live traffic, detections, rules, review workflows and evidence —
+              with a deliberate separation between machine scoring and human-confirmed truth.
+            </p>
+            <div class="tag-row"><span class="tag">FastAPI</span><span class="tag">Elasticsearch</span><span class="tag">Traffic Analysis</span><span class="tag">DDoS</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-index">03 / STACK</span>
+            <h2>Tools I actually use.</h2>
+          </div>
+          <p>
+            The stack reflects hands-on work across professional systems, long-running personal engineering,
+            network operations and data-heavy tooling.
+          </p>
+        </div>
+
+        <div class="stack-shell">
+          <article class="stack-card">
+            <h3>Programming & Backend</h3>
+            <div class="stack-list">
+              <span>Python</span><span>JavaScript</span><span>Lua</span><span>SQL</span><span>Bash</span><span>PowerShell</span>
+              <span>FastAPI</span><span>Flask</span><span>Node.js</span><span>REST APIs</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Data & Observability</h3>
+            <div class="stack-list">
+              <span>Elasticsearch</span><span>KQL</span><span>Query DSL</span><span>PostgreSQL</span><span>MySQL</span>
+              <span>MongoDB / NoSQL</span><span>SQLite</span><span>Kibana</span><span>Grafana</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Network & Security</h3>
+            <div class="stack-list">
+              <span>TCP/IP</span><span>DNS</span><span>TCP / UDP / ICMP</span><span>Wireshark</span><span>Nmap</span>
+              <span>TShark</span><span>DDoS</span><span>Firewall Ops</span><span>Incident Response</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>AI & Retrieval</h3>
+            <div class="stack-list">
+              <span>Ollama</span><span>Qwen</span><span>DeepSeek</span><span>Embeddings</span><span>Reranking</span>
+              <span>RAG</span><span>NLU</span><span>Evidence Chains</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Systems</h3>
+            <div class="stack-list">
+              <span>Linux</span><span>Ubuntu</span><span>Kali Linux</span><span>Windows</span><span>Git</span><span>GitHub</span>
+              <span>SSH</span><span>Automation</span>
+            </div>
+          </article>
+          <article class="stack-card">
+            <h3>Frontend when needed</h3>
+            <div class="stack-list">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Dashboard UI</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="foundation">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-index">04 / FOUNDATION</span>
+            <h2>Seven years of live-system engineering before security became the center.</h2>
+          </div>
+          <p>
+            FiveM was not just game scripting for me. It was years of backend logic, databases, live incidents,
+            permissions, admin tooling, performance work and systems that had to stay alive with real users online.
+          </p>
+        </div>
+
+        <div class="foundation">
+          <div class="foundation-aside">
+            <strong>2018—2025</strong>
+            <span>FIVEM / BACKEND / INFRASTRUCTURE</span>
+          </div>
+          <div class="foundation-copy">
+            <h3>Lua, JavaScript, MySQL and production debugging became the foundation.</h3>
+            <p>
+              I worked across custom server systems, authentication and permissions, admin/logging tools, economy and gameplay backends,
+              MySQL/oxmysql data, external analytics, deployment and performance optimization. That background made moving between
+              application code, databases, infrastructure and live operational debugging feel natural.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Lua</span><span class="tag">JavaScript</span><span class="tag">MySQL / oxmysql</span>
+              <span class="tag">HTML / CSS</span><span class="tag">Linux / Windows</span><span class="tag">Live Operations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <span class="section-index">05 / CONTACT</span>
+            <h2>Build the system.<br>Understand the signal.</h2>
+            <p>
+              For engineering, security, backend, observability or applied-AI conversations, GitHub and email are the cleanest ways to reach me.
+            </p>
+          </div>
+          <div class="contact-side">
+            <a class="contact-mail" href="mailto:Contact_VoidCipher@proton.me">Contact_VoidCipher@proton.me ↗</a>
+            <a class="contact-mail" href="https://github.com/Danial-Zolfaghari" target="_blank" rel="noreferrer">github.com/Danial-Zolfaghari ↗</a>
+            <small>Danial Zolfaghari / DZ</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span><strong>Danial Zolfaghari</strong> · IRT / EOC Engineer · Network Security Engineer · Backend Developer</span>
+      <span>© <span id="year">2026</span> · Built for clarity, not noise.</span>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
 </body>
 </html>
