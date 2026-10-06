@@ -1,0 +1,60 @@
+name: Build portfolio source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".portfolio/source.zip"
+      - ".github/workflows/build-portfolio.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: .portfolio-build/client/package-lock.json
+
+      - name: Extract portfolio source
+        shell: bash
+        run: |
+          rm -rf .portfolio-build
+          mkdir -p .portfolio-build
+          unzip -q .portfolio/source.zip -d .portfolio-build
+
+      - name: Install dependencies
+        working-directory: .portfolio-build/client
+        run: npm ci
+
+      - name: Build Vite portfolio
+        working-directory: .portfolio-build/client
+        run: npm run build
+
+      - name: Prepare build branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B portfolio-build-output
+          rm -rf assets index.html 404.html robots.txt sitemap.xml .nojekyll styles.css app.js
+          cp -a .portfolio-build/client/dist/. .
+          rm -rf .portfolio-build
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No build changes."
+          else
+            git commit -m "build: compile portfolio from React source"
+          fi
+          git push --force origin portfolio-build-output
