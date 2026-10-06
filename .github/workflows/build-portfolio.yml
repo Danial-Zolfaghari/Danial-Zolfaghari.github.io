@@ -20,19 +20,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: npm
-          cache-dependency-path: .portfolio-build/client/package-lock.json
-
       - name: Extract portfolio source
         shell: bash
         run: |
           rm -rf .portfolio-build
           mkdir -p .portfolio-build
           unzip -q .portfolio/source.zip -d .portfolio-build
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: .portfolio-build/client/package-lock.json
 
       - name: Install dependencies
         working-directory: .portfolio-build/client
