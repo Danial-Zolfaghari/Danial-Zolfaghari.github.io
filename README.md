@@ -1,12 +1,22 @@
-# Danial Zolfaghari — Personal Portfolio
+# Danial Zolfaghari — Portfolio
 
 Source repository for **https://danial-zolfaghari.github.io/**.
 
-The site presents my professional focus across IRT/EOC, network security, network traffic analysis, backend engineering, automation, observability, databases, and applied AI.
+The deployed frontend is the React/Vite portfolio provided in `Portfolio(2)`, prepared for static GitHub Pages hosting and aligned with the current public profile.
 
-## Author
+## Focus
+
+- IRT / EOC and network security
+- L3/L4 traffic analysis and DDoS operations
+- backend engineering and automation
+- Elasticsearch / observability
+- applied AI and evidence-driven data systems
+- FiveM / Lua engineering background
+
+A sanitized source snapshot is kept in `.portfolio/source.zip`.
+
+## Public contact
 
 **Danial Zolfaghari**  
-IRT / EOC Engineer · Network Security Engineer · Backend Developer
-
-GitHub: https://github.com/Danial-Zolfaghari
+IRT / EOC Engineer · Network Security Engineer · Backend Developer  
+Contact_VoidCipher@proton.me
