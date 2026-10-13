@@ -7,11 +7,11 @@
     <meta name="theme-color" content="#040608" />
     <meta name="author" content="Danial Zolfaghari (دانیال ذوالفقاری)" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="canonical" href="https://danial-zolfaghari.github.io/work/nexus-core" />
+    <link rel="canonical" href="https://danial-zolfaghari.github.io/work/nexus-core/" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Nexus Core — Danial Zolfaghari" />
     <meta property="og:description" content="FiveM backend and infrastructure engineering case study." />
-    <meta property="og:url" content="https://danial-zolfaghari.github.io/work/nexus-core" />
+    <meta property="og:url" content="https://danial-zolfaghari.github.io/work/nexus-core/" />
     <meta property="og:site_name" content="Danial Zolfaghari" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Danial Zolfaghari" />
@@ -25,7 +25,18 @@
     <link rel="stylesheet" crossorigin href="/assets/index-DezAZb44.css">
   </head>
   <body>
-    <div id="root"><main class="seo-prerender" data-static-seo="true"><h1>nexus core</h1><p>Engineering work by <a href="/">Danial Zolfaghari</a> <span lang="fa" dir="rtl">(دانیال ذوالفقاری)</span>.</p><nav><a href="/">About Danial Zolfaghari</a> · <a href="/work">Selected Work</a> · <a href="/foundation">Engineering Foundation</a></nav></main></div>
-
-  </body>
+    <div id="root"><main class="seo-prerender" data-static-seo="true">
+ <article itemscope itemtype="https://schema.org/CreativeWork">
+ <header><h1 itemprop="name">Nexus Core — Proprietary Server Framework</h1>
+ <p>Custom core · Not ESX / QBCore</p>
+ <p>Project developed by <a href="/">Danial Zolfaghari</a> <span lang="fa" dir="rtl">(دانیال ذوالفقاری)</span>. Platform · FiveM.</p></header>
+ <section aria-label="Project overview"><h2>Project overview</h2><p>Proprietary FiveM server framework — player lifecycle, groups, inventory exports, paycheck loops, world safety, and spawn orchestration instead of off-the-shelf ESX, QBCore, or VRP.</p><p>The foundation layer every other resource on the server depended on — a custom getSharedObject pattern, MySQL-backed persistence, and admin command registration built from scratch for a 120+ resource production platform.</p><p>Replaced template cores with a platform layer engineered for the server's exact economy, jobs, and admin model — every downstream system consumed the same shared object and persistence contracts.</p><p>Off-the-shelf FiveM cores forced compromises on economy rules, job systems, and admin workflows — and every downloaded pack assumed a different core API.</p><p>Authored Nexus Core as the single platform layer: shared object exports, player lifecycle, groups, paycheck loops, world safety, and admin registration — so 120+ custom resources shared one contract.</p></section>
+ <section><h2>Technologies and tools</h2><ul><li>Lua</li><li>JavaScript</li><li>MySQL</li><li>oxmysql</li><li>REST APIs</li></ul></section>
+ <section><h2>Engineering highlights</h2><ul><li>Built custom getSharedObject pattern with server/client exports across the ecosystem</li><li>Engineered player class, groups, login pipeline, and paycheck system from scratch</li><li>Added world safety module — explosion/fire suppression, spawn camera, configurable timing</li><li>Designed weapon validation, account types, and MySQL persistence via oxmysql</li></ul></section>
+ <section><h2>Features and capabilities</h2><section><h3>Platform Layer</h3><ul><li>getSharedObject exports</li><li>Player class &amp; groups</li><li>Login pipeline</li><li>Paycheck system</li><li>Account types</li></ul></section><section><h3>World &amp; Safety</h3><ul><li>Spawn orchestration</li><li>Spawn camera</li><li>Explosion suppression</li><li>Fire suppression</li><li>Weapon validation config</li></ul></section><section><h3>Persistence</h3><ul><li>oxmysql integration</li><li>Schema ownership</li><li>Shared admin command registration</li><li>Server/client export pattern</li></ul></section></section>
+ <section><h2>System architecture</h2><ul><li><strong>Core</strong>: Lua server/client resources — shared object, player lifecycle, groups, paychecks</li><li><strong>Persistence</strong>: MySQL via oxmysql — accounts, inventory exports, login state</li><li><strong>Safety</strong>: World module — spawn timing, explosion/fire suppression, weapon config</li><li><strong>Consumers</strong>: 120+ downstream resources — economy, jobs, admin, analytics bridges</li></ul></section>
+ <p>This project is presented as an engineering case study. A public source repository is not currently available.</p>
+ </article><nav aria-label="Portfolio navigation"><a href="/">Home</a> · <a href="/work/">All projects</a> · <a href="/foundation/">Engineering foundation</a> · <a href="https://github.com/Danial-Zolfaghari">GitHub profile</a></nav><section><h2>Other engineering projects</h2><ul><li><a href="/work/vida/">VIDA</a></li><li><a href="/work/ai-data-analyzer/">AI Data Analyzer</a></li><li><a href="/work/ande/">ANDE</a></li><li><a href="/work/living-economy/">Living Economy</a></li><li><a href="/work/server-analytics/">Server Analytics</a></li><li><a href="/work/procdomainsniffer/">ProcDomainSniffer</a></li><li><a href="/work/tunnelgate/">TunnelGate</a></li><li><a href="/work/dz-operations-console/">DZ Operations Console</a></li><li><a href="/work/elk-checker/">ELK-Checker</a></li><li><a href="/work/round-robin/">Round-Robin</a></li></ul></section>
+ </main></div>
+</body>
 </html>

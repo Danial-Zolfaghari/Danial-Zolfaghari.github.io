@@ -7,11 +7,11 @@
     <meta name="theme-color" content="#040608" />
     <meta name="author" content="Danial Zolfaghari (دانیال ذوالفقاری)" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="canonical" href="https://danial-zolfaghari.github.io/work/ande" />
+    <link rel="canonical" href="https://danial-zolfaghari.github.io/work/ande/" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="ANDE Network DDoS Analysis — Danial Zolfaghari" />
     <meta property="og:description" content="Operator-focused L3/L4 traffic and DDoS analysis across TCP, UDP and ICMP." />
-    <meta property="og:url" content="https://danial-zolfaghari.github.io/work/ande" />
+    <meta property="og:url" content="https://danial-zolfaghari.github.io/work/ande/" />
     <meta property="og:site_name" content="Danial Zolfaghari" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Danial Zolfaghari" />
@@ -25,7 +25,18 @@
     <link rel="stylesheet" crossorigin href="/assets/index-DezAZb44.css">
   </head>
   <body>
-    <div id="root"><main class="seo-prerender" data-static-seo="true"><h1>ande</h1><p>Engineering work by <a href="/">Danial Zolfaghari</a> <span lang="fa" dir="rtl">(دانیال ذوالفقاری)</span>.</p><nav><a href="/">About Danial Zolfaghari</a> · <a href="/work">Selected Work</a> · <a href="/foundation">Engineering Foundation</a></nav></main></div>
-
-  </body>
+    <div id="root"><main class="seo-prerender" data-static-seo="true">
+ <article itemscope itemtype="https://schema.org/CreativeWork">
+ <header><h1 itemprop="name">ANDE — Adaptive Network Defence Engine</h1>
+ <p>Read-only · Layer-1 → Admin → ML</p>
+ <p>Project developed by <a href="/">Danial Zolfaghari</a> <span lang="fa" dir="rtl">(دانیال ذوالفقاری)</span>. Security · Razhman.</p></header>
+ <section aria-label="Project overview"><h2>Project overview</h2><p>Read-only network traffic analysis console for L3/L4 DoS/DDoS triage — Layer-1 heuristics, Discovery proposals, Admin ground truth, and offline ML scoring over Elasticsearch.</p><p>ANDE (Adaptive Network Defence Engine) is a read-only operations console: Elasticsearch search, live rule-window analysis, SSH mitigator config inspection, and local ground-truth labeling. Layer-1 heuristics catch obvious spikes; Discovery proposes; Admin decides; offline export trains Random Forest and XGBoost — prediction never becomes ground truth and live path never mitigates traffic.</p><p>SOC-grade read-only analysis console that separates detection triage from mitigation — Layer-1 floors, human Admin ground truth, and optional ML hints without ever writing to Elasticsearch or changing drop rules.</p><p>During active L3/L4 incidents, analysts needed faster DoS/DDoS triage than manual Kibana queries — but any tool that auto-mitigated or auto-labeled traffic would corrupt ground truth and create operational risk.</p><p>Built ANDE as a read-only analysis console: LiveEngine polls Elasticsearch every 2s, Layer-1 heuristics score obvious spikes, Discovery proposes candidates on 2-minute windows, and Admin Review is the sole ground-truth source — offline Random Forest/XGBoost trains later and live ML scores are hints only.</p></section>
+ <section><h2>Technologies and tools</h2><ul><li>Python</li><li>FastAPI</li><li>React</li><li>TypeScript</li><li>Elasticsearch</li><li>WebSocket</li><li>XGBoost</li><li>Random Forest</li><li>SSH</li></ul></section>
+ <section><h2>Engineering highlights</h2><ul><li>Engineered LiveEngine with 30s detection, 2m Discovery, and 15m traffic chart windows — never collapsed into one query semantics</li><li>Built Layer-1 fixed heuristics for DoS/DDoS classification (source cardinality) with PPS floor bands and Under Attack /32 rules</li><li>Designed triage cascade: Discovery proposes → Admin Review writes ground truth → offline ML trains only after readiness gates</li><li>Shipped React SPA with WebSocket snapshot push, Explain drawer, Rule History JSONL, and Pattern Intelligence</li><li>Enforced safety invariants: read-only ES, SSH cat-only mitigator inspect, prediction ≠ ground truth, live ≠ train</li></ul></section>
+ <section><h2>Features and capabilities</h2><section><h3>Live Analysis</h3><ul><li>LiveEngine 2s tick</li><li>30s Detection Window</li><li>Layer-1 DoS/DDoS Heuristics</li><li>Window Features &amp; Spikes</li><li>Explain Drawer</li><li>Rule History JSONL</li></ul></section><section><h3>Discovery &amp; Triage</h3><ul><li>Discovery Engine 2m Window</li><li>Admin Review Ground Truth</li><li>Pattern Intelligence (PI)</li><li>Attack Scope (dest vs kind)</li><li>Evidence Labeling</li><li>Conflict Resolution</li></ul></section><section><h3>Operations UI</h3><ul><li>React SPA · ANDE Theme</li><li>WebSocket Live Snapshots</li><li>Dashboard Rate Charts</li><li>Triggers SSH Buckets</li><li>History Timeline</li><li>Role-gated Tabs</li></ul></section><section><h3>ML &amp; Safety</h3><ul><li>Offline Random Forest</li><li>Offline XGBoost</li><li>Readiness Gates</li><li>Read-only Elasticsearch</li><li>SSH Cat-only Mitigator</li><li>Safety Invariants Enforced</li></ul></section></section>
+ <section><h2>System architecture</h2><ul><li><strong>Frontend</strong>: React + TypeScript + Vite — web/dist, ANDE charcoal + lime theme, WebSocket /api/live/ws</li><li><strong>API</strong>: FastAPI network_ai.live.api — cookie session, CSRF, IdentityStore, LiveHub snapshot push</li><li><strong>Collectors</strong>: LiveEngine ~2s, DiscoveryEngine ~2m, RuleServerMonitor SSH keepalive 60s, RuleHistoryStore JSONL</li><li><strong>Analysis</strong>: Windows → Layer-1 heuristics → Labeling → Talkers explain → Snapshot compact rules</li><li><strong>External</strong>: Elasticsearch read-only search + SSH mitigator rule-2-drop.cfg cat-only</li><li><strong>ML (Offline)</strong>: Admin GT JSONL → dataset export → Random Forest + XGBoost — never on live path</li></ul></section>
+ <p>This project is presented as an engineering case study. A public source repository is not currently available.</p>
+ </article><nav aria-label="Portfolio navigation"><a href="/">Home</a> · <a href="/work/">All projects</a> · <a href="/foundation/">Engineering foundation</a> · <a href="https://github.com/Danial-Zolfaghari">GitHub profile</a></nav><section><h2>Other engineering projects</h2><ul><li><a href="/work/vida/">VIDA</a></li><li><a href="/work/ai-data-analyzer/">AI Data Analyzer</a></li><li><a href="/work/nexus-core/">Nexus Core</a></li><li><a href="/work/living-economy/">Living Economy</a></li><li><a href="/work/server-analytics/">Server Analytics</a></li><li><a href="/work/procdomainsniffer/">ProcDomainSniffer</a></li><li><a href="/work/tunnelgate/">TunnelGate</a></li><li><a href="/work/dz-operations-console/">DZ Operations Console</a></li><li><a href="/work/elk-checker/">ELK-Checker</a></li><li><a href="/work/round-robin/">Round-Robin</a></li></ul></section>
+ </main></div>
+</body>
 </html>

@@ -7,11 +7,11 @@
     <meta name="theme-color" content="#040608" />
     <meta name="author" content="Danial Zolfaghari (دانیال ذوالفقاری)" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="canonical" href="https://danial-zolfaghari.github.io/work/server-analytics" />
+    <link rel="canonical" href="https://danial-zolfaghari.github.io/work/server-analytics/" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Server Analytics — Danial Zolfaghari" />
     <meta property="og:description" content="External server analytics and operator tooling case study." />
-    <meta property="og:url" content="https://danial-zolfaghari.github.io/work/server-analytics" />
+    <meta property="og:url" content="https://danial-zolfaghari.github.io/work/server-analytics/" />
     <meta property="og:site_name" content="Danial Zolfaghari" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Danial Zolfaghari" />
@@ -25,7 +25,18 @@
     <link rel="stylesheet" crossorigin href="/assets/index-DezAZb44.css">
   </head>
   <body>
-    <div id="root"><main class="seo-prerender" data-static-seo="true"><h1>server analytics</h1><p>Engineering work by <a href="/">Danial Zolfaghari</a> <span lang="fa" dir="rtl">(دانیال ذوالفقاری)</span>.</p><nav><a href="/">About Danial Zolfaghari</a> · <a href="/work">Selected Work</a> · <a href="/foundation">Engineering Foundation</a></nav></main></div>
-
-  </body>
+    <div id="root"><main class="seo-prerender" data-static-seo="true">
+ <article itemscope itemtype="https://schema.org/CreativeWork">
+ <header><h1 itemprop="name">Server Analytics — External Flask Command Center</h1>
+ <p>Outside the game process · Read-only MySQL</p>
+ <p>Project developed by <a href="/">Danial Zolfaghari</a> <span lang="fa" dir="rtl">(دانیال ذوالفقاری)</span>. Operations · FiveM.</p></header>
+ <section aria-label="Project overview"><h2>Project overview</h2><p>Standalone Flask Command Center running outside the game process — read-only MySQL, separate SQLite security layer, KPI dashboards, Activity Score analytics, and 15+ operational modules.</p><p>Whole-server intelligence without touching the live game process — the same engineering instinct behind VIDA and Razhman analytics, applied to a FiveM production platform.</p><p>Gave operators whole-server KPIs and Activity Score analytics without risking the live game process — read-only data access with a separate security layer.</p><p>In-game admin tools could not safely expose whole-server analytics — coupling heavy queries to the live game process risked tick stability and mixed operator security with player sessions.</p><p>Engineered a standalone Flask Command Center: read-only MySQL from outside FXServer, SQLite-backed operator security, KPI dashboards, and Activity Score modules — 15+ operational views without touching the game loop.</p></section>
+ <section><h2>Technologies and tools</h2><ul><li>Python</li><li>Flask</li><li>MySQL</li><li>SQLite</li><li>JavaScript</li><li>Linux</li></ul></section>
+ <section><h2>Engineering highlights</h2><ul><li>Built Flask Command Center outside FXServer — read-only MySQL, no in-process coupling</li><li>Added separate SQLite security layer for operator authentication and access control</li><li>Shipped KPI dashboards and Activity Score analytics across 15+ operational modules</li><li>Latest production iteration shipped September 2026</li></ul></section>
+ <section><h2>Features and capabilities</h2><section><h3>Command Center</h3><ul><li>Flask web panel</li><li>15+ operational modules</li><li>KPI dashboards</li><li>Activity Score analytics</li></ul></section><section><h3>Data &amp; Security</h3><ul><li>Read-only MySQL</li><li>SQLite operator auth</li><li>Separate process</li><li>No FXServer coupling</li></ul></section><section><h3>Operations</h3><ul><li>Linux deployment</li><li>Seasonal KPI tracking</li><li>Operator workflows</li><li>External deploy flow</li></ul></section></section>
+ <section><h2>System architecture</h2><ul><li><strong>Panel</strong>: Flask + JavaScript — KPI dashboards, Activity Score, 15+ modules</li><li><strong>Security</strong>: SQLite operator layer — auth and access isolated from game DB writes</li><li><strong>Data</strong>: Read-only MySQL — whole-server queries without touching live resources</li><li><strong>Runtime</strong>: Separate Linux process — independent from FXServer tick loop</li></ul></section>
+ <p>This project is presented as an engineering case study. A public source repository is not currently available.</p>
+ </article><nav aria-label="Portfolio navigation"><a href="/">Home</a> · <a href="/work/">All projects</a> · <a href="/foundation/">Engineering foundation</a> · <a href="https://github.com/Danial-Zolfaghari">GitHub profile</a></nav><section><h2>Other engineering projects</h2><ul><li><a href="/work/vida/">VIDA</a></li><li><a href="/work/ai-data-analyzer/">AI Data Analyzer</a></li><li><a href="/work/ande/">ANDE</a></li><li><a href="/work/nexus-core/">Nexus Core</a></li><li><a href="/work/living-economy/">Living Economy</a></li><li><a href="/work/procdomainsniffer/">ProcDomainSniffer</a></li><li><a href="/work/tunnelgate/">TunnelGate</a></li><li><a href="/work/dz-operations-console/">DZ Operations Console</a></li><li><a href="/work/elk-checker/">ELK-Checker</a></li><li><a href="/work/round-robin/">Round-Robin</a></li></ul></section>
+ </main></div>
+</body>
 </html>
