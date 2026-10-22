@@ -92,6 +92,12 @@ for file in html_files:
             json.loads(block)
         except json.JSONDecodeError as e:
             errors.append(f"{rel}: invalid JSON-LD: {e}")
+release_html = (ROOT / "updates/index.html").read_text(encoding="utf-8")
+for repo in ("ProcDomainSniffer", "TunnelGate", "DZ-Operations-Console", "ELK-Checker", "Round-Robin"):
+    expected = f'href="https://github.com/Danial-Zolfaghari/{repo}/releases"'
+    if expected not in release_html:
+        errors.append(f"Missing no-JS GitHub release link: {repo}")
+
 for rel in ("insights/index.html", "updates/index.html"):
     content = (ROOT / rel).read_text(encoding="utf-8")
     if "دانیال ذوالفقاری" not in content:
