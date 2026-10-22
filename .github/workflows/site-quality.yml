@@ -1,0 +1,22 @@
+name: Static Site Quality Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate static HTML, links, and sitemap
+        run: python scripts/validate_site.py
+      - name: Parse JavaScript bundles
+        run: |
+          node --check assets/index-BhDQvKz6.js
+          node --check assets/engineering-releases.js
