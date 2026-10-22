@@ -72,6 +72,9 @@ for file in html_files:
     content = file.read_text(encoding="utf-8")
     parser.feed(content)
     rel = str(file.relative_to(ROOT))
+    if rel not in ("insights/index.html", "insights/process-aware-network-telemetry/index.html", "updates/index.html"):
+        if 'src="/assets/index-BhDQvKz6.js?v=engineering-hub-20261022"' not in content:
+            errors.append(f"{rel}: missing versioned SPA bundle reference")
     if parser.title_count != 1 or parser.h1_count != 1:
         errors.append(f"{rel}: expected exactly one title and one h1")
     if len(parser.canonical) != 1:
