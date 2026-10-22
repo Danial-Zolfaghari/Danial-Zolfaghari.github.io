@@ -5,15 +5,14 @@ const owner="Danial-Zolfaghari";
 const repos=["ProcDomainSniffer","TunnelGate","DZ-Operations-Console","ELK-Checker","Round-Robin"];
 const root=document.getElementById("release-list");
 if(!root)return;
-const make=(tag,text,cls)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e};
 async function load(repo){
-  const card=make("article",null,"repo");
-  const h=make("h3",repo);card.appendChild(h);
-  const status=make("p","Checking published releases…","state");card.appendChild(status);
-  const link=make("a","View repository releases ↗");
-  link.href="https://github.com/"+owner+"/"+repo+"/releases";
-  link.rel="noopener noreferrer";card.appendChild(link);
-  root.appendChild(card);
+  // The links and repository names exist in static HTML for SEO and no-JS access.
+  const card=Array.from(root.querySelectorAll("article[data-repo]")).find(el=>el.dataset.repo===repo);
+  if(!card)return;
+  const status=card.querySelector(".state");
+  const link=card.querySelector("a");
+  if(!status||!link)return;
+  status.textContent="Checking published releases…";
   try{
     const controller=new AbortController();
     const timeout=setTimeout(()=>controller.abort(),6500);
